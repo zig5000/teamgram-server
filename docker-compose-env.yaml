@@ -129,6 +129,17 @@ services:
     networks:
       - teamgram_net
 
+  minio_mc:
+    image: minio/mc:latest
+    platform: linux/amd64
+    container_name: minio_mc
+    command: >
+      sh -c "mc mb minio/documents && 
+      mc mb minio/encryptedfiles &&
+      mc mb minio/photos &&
+      mc mb minio/videos &&
+      exit
+
 networks:
   teamgram_net:
     driver: bridge
