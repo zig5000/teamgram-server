@@ -138,7 +138,7 @@ services:
       mc mb minio/encryptedfiles &&
       mc mb minio/photos &&
       mc mb minio/videos &&
-      exit
+      exit"
 
 networks:
   teamgram_net:
