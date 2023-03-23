@@ -7,9 +7,10 @@
 -- 服务器版本： 5.7.37
 -- PHP 版本： 8.1.2
 
+use teamgram;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "+03:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
