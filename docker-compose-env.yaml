@@ -75,7 +75,7 @@ services:
       #redis config file
       #- ./deploy/redis/config/redis.conf:/usr/local/redis/config/redis.conf
     environment:
-      TZ: Asia/Shanghai
+      TZ: Europe/Moscow
     restart: always
     privileged: true
     command: redis-server --appendonly yes
