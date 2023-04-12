@@ -133,12 +133,9 @@ services:
     image: minio/mc:latest
     platform: linux/amd64
     container_name: minio_mc
-    command: >
-      sh -c "mc mb minio/documents && 
-      mc mb minio/encryptedfiles &&
-      mc mb minio/photos &&
-      mc mb minio/videos &&
-      exit"
+    volumes:
+      - ./minio_init.sh:/minio_init.sh
+    entrypoint: /minio_init.sh
 
 networks:
   teamgram_net:
