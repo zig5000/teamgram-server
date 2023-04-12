@@ -134,6 +134,8 @@ services:
     volumes:
       - ./minio_init.sh:/minio_init.sh
     entrypoint: /minio_init.sh
+    networks:
+      - teamgram_net
 
 networks:
   teamgram_net:
