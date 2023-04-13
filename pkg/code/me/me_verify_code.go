@@ -63,7 +63,7 @@ func (m *meVerifyCode) SendSmsVerifyCode(ctx context.Context, phoneNumber, code,
 	return "", nil
 }
 
-func (m *meVerifyCode) VerifySmsCode(ctx context.Context, codeHash, code, extraData string) error {
+func (m *meVerifyCode) VerifySmsCode(ctx context.Context, codeHash, code, extraData, phoneNumber string) error {
 	if len(code) != 5 {
 		return fmt.Errorf("code invalid")
 	}

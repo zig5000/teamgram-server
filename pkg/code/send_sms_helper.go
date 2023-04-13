@@ -27,7 +27,7 @@ import (
 
 type VerifyCodeInterface interface {
 	SendSmsVerifyCode(ctx context.Context, phoneNumber, code, codeHash string) (string, error)
-	VerifySmsCode(ctx context.Context, codeHash, code, extraData string) error
+	VerifySmsCode(ctx context.Context, codeHash, code, extraData, phoneNumber string) error
 }
 
 func NewVerifyCode(c *conf.SmsVerifyCodeConfig) VerifyCodeInterface {

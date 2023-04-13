@@ -264,7 +264,7 @@ func (m *AuthLogic) DoAuthSignUp(ctx context.Context, authKeyId int64, phoneNumb
 		if err = m.VerifyCodeInterface.VerifySmsCode(ctx,
 			codeData.PhoneCodeHash,
 			*phoneCode,
-			codeData.PhoneCodeExtraData); err != nil {
+			codeData.PhoneCodeExtraData, phoneNumber); err != nil {
 			return
 		}
 		//if m.VerifyCodeInterface != nil {

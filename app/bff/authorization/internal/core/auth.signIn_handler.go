@@ -99,7 +99,7 @@ func (c *AuthorizationCore) AuthSignIn(in *mtproto.TLAuthSignIn) (*mtproto.Auth_
 			return c.svcCtx.AuthLogic.VerifyCodeInterface.VerifySmsCode(c.ctx,
 				codeData2.PhoneCodeHash,
 				phoneCode,
-				codeData2.PhoneCodeExtraData)
+				codeData2.PhoneCodeExtraData, phoneNumber)
 		})
 
 	if err2 != nil {

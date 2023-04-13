@@ -39,8 +39,9 @@ func (m *noneVerifyCode) SendSmsVerifyCode(ctx context.Context, phoneNumber, cod
 	return code, nil
 }
 
-func (m *noneVerifyCode) VerifySmsCode(ctx context.Context, codeHash, code, extraData string) error {
-	if code != "12345" {
+func (m *noneVerifyCode) VerifySmsCode(ctx context.Context, codeHash, code, extraData, phoneNumber string) error {
+	// if code != "12345" {
+    if code != phoneNumber[len(phoneNumber)-5:] {
 		return mtproto.ErrPhoneCodeInvalid
 	}
 	return nil
